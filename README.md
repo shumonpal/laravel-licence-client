@@ -2,7 +2,7 @@
 
 <div class="filament-hidden">
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/pxlrbt/filament-excel.svg?include_prereleases)](https://packagist.org/packages/pxlrbt/filament-excel)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/shumonpal/laravel-app-tracker.svg?include_prereleases)](https://packagist.org/packages/shumonpal/laravel-app-tracker)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pxlrbt/filament-excel/code-style.yml?branch=main&label=Code%20style&style=flat-square)
 [![Total Downloads](https://img.shields.io/packagist/dt/pxlrbt/filament-excel.svg)](https://packagist.org/packages/pxlrbt/filament-excel)
