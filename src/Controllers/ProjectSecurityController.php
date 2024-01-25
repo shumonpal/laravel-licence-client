@@ -66,10 +66,13 @@ class ProjectSecurityController extends Controller
             'domain' => $domain
         ]);
 
-        cache()->forever(
-            'shumonpal-licence-'. $domain, $licence
-        );
+        cache()->forget('shumonpal-licence');
 
+        cache()->remember(
+            'shumonpal-licence', now()->addDays(5),
+            function() use($validated) { return $validated['code'] ? 'verified' : false;} 
+        );
+        // dd(cache()->get('shumonpal-licence'));
         session()->forget('try-licence');
         session()->forget('try-licence-time');
 

@@ -17,7 +17,6 @@ class NotifyIfNotLicencedListener
      */
     public function handle(Login $event)
     {
-    
        if (!$this->licence()) {
            $this->storeUserDetails($event);
        }
