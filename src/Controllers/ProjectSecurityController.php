@@ -44,6 +44,18 @@ class ProjectSecurityController extends Controller
         return $res;
     }
 
+
+    /**
+     * Verify LicenceKey with ajax request.
+     * 
+     * @return Response
+     */
+    public function ajaxVerify() {
+        return response()->json([
+            'success' => ($this->licence() === 'verified') ? true : false
+        ]);
+    }
+
     /**
      * Store LicenceKey.
      * POST
@@ -69,7 +81,7 @@ class ProjectSecurityController extends Controller
         cache()->forget('shumonpal-licence');
 
         cache()->remember(
-            'shumonpal-licence', now()->addDays(5),
+            'shumonpal-licence', now()->addDays(2),
             function() use($validated) { return $validated['code'] ? 'verified' : false;} 
         );
         // dd(cache()->get('shumonpal-licence'));
