@@ -21,6 +21,6 @@ class LicencedVirifiedMiddleware
         if ($this->licence() === 'verified') {
             return $next($request);
         }
-        redirect(url(config('app-licence.licence_page_url')))
+        return redirect(url(config('app-licence.licence_page_url')));
     }
 }
