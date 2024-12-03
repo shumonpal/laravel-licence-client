@@ -18,10 +18,9 @@ class LicencedVirifiedMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // dd($this->licence());
         if ($this->licence() === 'verified') {
             return $next($request);
         }
-        return redirect(route('project-security.licences'));
+        redirect(url(config('app-licence.licence_page_url')))
     }
 }
