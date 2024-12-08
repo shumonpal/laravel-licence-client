@@ -72,12 +72,6 @@ class ProjectSecurityController extends Controller
         $domain = $this->getDomainName($request->url());
         $validated = $this->validation($request, $domain);
 
-        $licence = ShumonpalLicence::updateOrCreate([
-            'code' => $validated['code'],
-        ],[
-            'domain' => $domain
-        ]);
-
         cache()->forget('shumonpal-licence');
 
         cache()->remember(
